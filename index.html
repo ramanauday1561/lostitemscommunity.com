@@ -1,266 +1,472 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="./favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#0B6BCB" />
-    <meta name="description" content="Lost Items Community - Find and report lost items in your community" />
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" />
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#005dac',
-                        surface: '#fcf8ff',
-                        'surface-variant': '#e0e2ec',
-                        'on-surface': '#191c20',
-                        'on-surface-variant': '#43474e',
-                        'lost-danger': '#D32F2F',
-                        'found-success': '#2E7D32',
-                        'pending-warning': '#ED6C02',
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <title>Lost Items Community</title>
-    <style>
-        body {
-            font-family: 'IBM Plex Sans', sans-serif;
-            color: #191c20;
-        }
-        .hero-section {
-            background: linear-gradient(135deg, #005dac 0%, #0B6BCB 100%);
-        }
-        .feature-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 93, 172, 0.15);
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
-<body class="bg-surface">
-    <!-- Header/Navigation -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary" style="font-size: 32px;">search</span>
-                <h1 class="text-2xl font-bold text-primary">Lost Items Community</h1>
-            </div>
-            <div class="hidden md:flex gap-6">
-                <a href="#features" class="text-on-surface-variant hover:text-primary transition">Features</a>
-                <a href="#about" class="text-on-surface-variant hover:text-primary transition">About</a>
-                <a href="#contact" class="text-on-surface-variant hover:text-primary transition">Contact</a>
-            </div>
-        </nav>
-    </header>
+<body>
+<x-dc>
+<helmet data-dc-atomics><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"><style>body{margin:0;background:linear-gradient(180deg,#bfe2f7 0%,#dcefFB 32%,#eef5fa 60%,#e9f2f9 100%);font-family:'Public Sans',system-ui,sans-serif;-webkit-text-size-adjust:100%}*{box-sizing:border-box}img{max-width:100%}a{color:#0B6BCB;text-decoration:none}a:hover{color:#08529c}button{font-family:inherit;cursor:pointer;border:0;background:none;padding:0;color:inherit;transition:transform .14s ease,background .18s ease,box-shadow .18s ease}input{font-family:inherit}input:focus{outline:none}.ms{font-family:'Material Symbols Rounded';font-weight:400;font-style:normal;line-height:1}</style></helmet>
 
-    <!-- Hero Section -->
-    <section class="hero-section text-white py-20 px-4">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Find Lost Items in Your Community</h2>
-            <p class="text-xl md:text-2xl mb-8 opacity-90">
-                Connect with your community to report, track, and recover lost items together
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://github.com/ramanauday1561/LostItemsCommunity" 
-                   class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-surface transition">
-                   View Project
-                </a>
-                <a href="#features" 
-                   class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition">
-                   Learn More
-                </a>
-            </div>
-        </div>
-    </section>
+<div style="width:100%;min-height:100vh;padding:clamp(8px,2vw,26px) clamp(8px,2vw,26px) 0;display:flex;justify-content:center">
+<div style="width:100%;max-width:1560px;background:#fff;border-radius:clamp(18px,2vw,26px);overflow:hidden;box-shadow:0 40px 90px -50px rgba(16,42,66,.45)">
 
-    <!-- Features Section -->
-    <section id="features" class="py-16 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h3 class="text-3xl font-bold text-center mb-12 text-on-surface">Key Features</h3>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="feature-card bg-surface rounded-lg p-6 border border-surface-variant">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="material-symbols-outlined text-lost-danger" style="font-size: 32px;">report</span>
-                        <h4 class="text-xl font-semibold">Report Lost Items</h4>
-                    </div>
-                    <p class="text-on-surface-variant">
-                        Quickly document and share details about items you've lost. Upload photos, descriptions, and location information.
-                    </p>
-                </div>
+<div style="position:sticky;top:0;z-index:20;padding:clamp(10px,2vw,18px) clamp(12px,2.4vw,28px) 10px;background:linear-gradient(180deg,#fff 70%,rgba(255,255,255,0))">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(10px,2vw,28px);padding:10px 12px 10px clamp(14px,2vw,22px);border-radius:clamp(20px,4vw,999px);background:#fff;box-shadow:0 1px 2px rgba(22,24,31,.06),0 18px 40px -28px rgba(22,24,31,.5)">
+<div style="display:flex;align-items:center;gap:10px;margin-right:auto;order:1">
+<span style="width:38px;height:38px;border-radius:12px;background:#EDF3F9;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="public/images/logo.png" alt="Lost Items Community" style="width:34px;height:34px;object-fit:contain"/></span>
+<span style="font:800 clamp(16px,1.6vw,19px) 'Public Sans',sans-serif;letter-spacing:-.03em;color:#16181F">Lost Items Community</span>
+</div>
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<div style="flex:1 1 240px;order:2;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(10px,1.6vw,24px)">
+<a href="#features" style="font:600 14.5px 'Public Sans',sans-serif;color:#3d434c">Features</a>
+<a href="#how" style="font:600 14.5px 'Public Sans',sans-serif;color:#3d434c">How It Works</a>
+<a href="#guidelines" style="font:600 14.5px 'Public Sans',sans-serif;color:#3d434c">Guidelines</a>
+<a href="#stories" style="font:600 14.5px 'Public Sans',sans-serif;color:#3d434c">Stories</a>
+<a href="#faq" style="font:600 14.5px 'Public Sans',sans-serif;color:#3d434c">FAQ</a>
+</div>
+</sc-if>
+<div style="display:flex;align-items:center;gap:8px;order:3">
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<button style="width:46px;height:46px;border-radius:14px;background:#16181F;color:#fff;display:flex;align-items:center;justify-content:center" style-hover="transform:translateY(-2px)"><span class="ms" style="font-size:22px">phone_iphone</span></button>
+<button style="width:46px;height:46px;border-radius:14px;background:#16181F;color:#fff;display:flex;align-items:center;justify-content:center" style-hover="transform:translateY(-2px)"><span class="ms" style="font-size:22px">play_arrow</span></button>
+</sc-if>
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ toggleMenu }}" style="width:46px;height:46px;border-radius:14px;background:#16181F;color:#fff;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:24px">{{ menuGlyph }}</span></button>
+</sc-if>
+</div>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<div style="flex:1 1 100%;order:4;display:flex;flex-direction:column;padding-top:6px">
+<a href="#features" onClick="{{ closeMenu }}" style="padding:13px 4px;border-top:1px solid #EDEEF0;font:600 15px 'Public Sans',sans-serif;color:#3d434c">Features</a>
+<a href="#how" onClick="{{ closeMenu }}" style="padding:13px 4px;border-top:1px solid #EDEEF0;font:600 15px 'Public Sans',sans-serif;color:#3d434c">How It Works</a>
+<a href="#guidelines" onClick="{{ closeMenu }}" style="padding:13px 4px;border-top:1px solid #EDEEF0;font:600 15px 'Public Sans',sans-serif;color:#3d434c">Guidelines</a>
+<a href="#stories" onClick="{{ closeMenu }}" style="padding:13px 4px;border-top:1px solid #EDEEF0;font:600 15px 'Public Sans',sans-serif;color:#3d434c">Stories</a>
+<a href="#faq" onClick="{{ closeMenu }}" style="padding:13px 4px;border-top:1px solid #EDEEF0;font:600 15px 'Public Sans',sans-serif;color:#3d434c">FAQ</a>
+<a href="#download" onClick="{{ closeMenu }}" style="margin-top:10px;min-height:48px;border-radius:14px;background:#16181F;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font:700 14.5px 'Public Sans',sans-serif"><span class="ms" style="font-size:19px">download</span>Get the app</a>
+</div>
+</sc-if>
+</div>
+</div>
 
-                <!-- Feature 2 -->
-                <div class="feature-card bg-surface rounded-lg p-6 border border-surface-variant">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="material-symbols-outlined text-found-success" style="font-size: 32px;">check_circle</span>
-                        <h4 class="text-xl font-semibold">Post Found Items</h4>
-                    </div>
-                    <p class="text-on-surface-variant">
-                        Help reunite found items with their rightful owners. Report discoveries and connect with community members.
-                    </p>
-                </div>
+<div style="padding:22px clamp(16px,3vw,40px) 0;display:flex;flex-direction:column;align-items:center;text-align:center">
+<div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;padding:6px 6px 6px 14px;border-radius:999px;background:#F4F5F6">
+<div style="display:flex">
+<span style="width:26px;height:26px;border-radius:50%;background:#0B6BCB;color:#fff;font:700 9px 'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:center;border:2px solid #fff">JO</span>
+<span style="width:26px;height:26px;border-radius:50%;background:#0F7B3D;color:#fff;font:700 9px 'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:center;border:2px solid #fff;margin-left:-8px">MA</span>
+<span style="width:26px;height:26px;border-radius:50%;background:#16181F;color:#fff;font:700 9px 'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:center;border:2px solid #fff;margin-left:-8px">EL</span>
+</div>
+<span style="font:600 13.5px 'Public Sans',sans-serif;color:#3d434c">Join 10,000+ Community Members</span>
+<a href="#download" style="display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;background:#0B6BCB;color:#fff;font:700 13px 'Public Sans',sans-serif">Get the app <span class="ms" style="font-size:15px">arrow_forward</span></a>
+</div>
 
-                <!-- Feature 3 -->
-                <div class="feature-card bg-surface rounded-lg p-6 border border-surface-variant">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="material-symbols-outlined text-primary" style="font-size: 32px;">group</span>
-                        <h4 class="text-xl font-semibold">Community Support</h4>
-                    </div>
-                    <p class="text-on-surface-variant">
-                        Connect with community members to assist in recovery efforts and share information about lost items.
-                    </p>
-                </div>
+<h1 style="margin:clamp(18px,3vw,26px) 0 0;max-width:900px;font:800 clamp(34px,6.2vw,62px)/1.06 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F;text-wrap:balance">Lost Something? <span style="color:#0B6BCB">We'll Help You Find It!</span></h1>
+<p style="margin:18px 0 0;max-width:640px;font:400 clamp(15px,1.6vw,17px)/1.65 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">Join thousands of people reuniting with their lost belongings every day. Report what you've found, search for what you've lost, and be part of a caring community that believes in helping each other.</p>
 
-                <!-- Feature 4 -->
-                <div class="feature-card bg-surface rounded-lg p-6 border border-surface-variant">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="material-symbols-outlined text-pending-warning" style="font-size: 32px;">track_changes</span>
-                        <h4 class="text-xl font-semibold">Track Status</h4>
-                    </div>
-                    <p class="text-on-surface-variant">
-                        Keep track of lost and found items with real-time status updates. Mark items as recovered or pending.
-                    </p>
-                </div>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;margin-top:26px">
+<button style="{{ btnAppStore }}" style-hover="transform:translateY(-2px)"><span class="ms" style="font-size:21px">phone_iphone</span><span style="text-align:left;line-height:1.1"><span style="display:block;font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;opacity:.7">DOWNLOAD ON THE</span><span style="display:block;font:700 15px 'Public Sans',sans-serif">App Store</span></span></button>
+<button style="{{ btnPlay }}" style-hover="transform:translateY(-2px)"><span class="ms" style="font-size:21px">play_arrow</span><span style="text-align:left;line-height:1.1"><span style="display:block;font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;opacity:.7">GET IT ON</span><span style="display:block;font:700 15px 'Public Sans',sans-serif">Google Play</span></span></button>
+</div>
+<div style="{{ freeNote }}"><span class="ms" style="flex:none;font-size:17px;color:#0F7B3D;margin-top:1px">check_circle</span><span style="{{ freeNoteText }}">Free forever — sign in to browse the registry and claim items</span></div>
+</div>
 
-                <!-- Feature 5 -->
-                <div class="feature-card bg-surface rounded-lg p-6 border border-surface-variant">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="material-symbols-outlined text-primary" style="font-size: 32px;">notifications</span>
-                        <h4 class="text-xl font-semibold">Smart Notifications</h4>
-                    </div>
-                    <p class="text-on-surface-variant">
-                        Get notified when items matching your lost items are found or when new items are reported.
-                    </p>
-                </div>
+<div style="position:relative;margin-top:clamp(24px,4vw,44px);overflow:hidden">
+<div style="position:absolute;left:50%;top:40px;transform:translateX(-50%);width:min(820px,120%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 35%,#DDEDF9 0%,#EAF3FA 55%,rgba(255,255,255,0) 72%);pointer-events:none"></div>
+<div style="{{ stageOuter }}">
+<div style="{{ stageInner }}">
 
-                <!-- Feature 6 -->
-                <div class="feature-card bg-surface rounded-lg p-6 border border-surface-variant">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="material-symbols-outlined text-primary" style="font-size: 32px;">security</span>
-                        <h4 class="text-xl font-semibold">Safe & Secure</h4>
-                    </div>
-                    <p class="text-on-surface-variant">
-                        Your privacy and security are our priority. Share only what you're comfortable with in our safe community.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div style="flex:none;width:250px;height:478px;border-radius:38px;background:#F2F2F0;overflow:hidden;position:relative;margin-right:-30px;transform:rotate(-9deg);box-shadow:0 40px 70px -34px rgba(22,24,31,.5),0 0 0 8px #16181F,0 0 0 9px rgba(255,255,255,.35)">
+<div style="height:32px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 20px 4px;font:600 10px 'Public Sans',sans-serif;color:#16181F"><span>9:41</span><span class="ms" style="font-size:13px">signal_cellular_alt</span></div>
+<div style="padding:8px 18px">
+<div style="font:600 8px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#9a9ea4">Registry</div>
+<div style="margin-top:3px;font:800 21px/1.1 'Public Sans',sans-serif;letter-spacing:-.03em;color:#16181F">Lost &amp; Found</div>
+<div style="display:flex;align-items:center;gap:8px;margin-top:12px;background:#fff;border-radius:14px;padding:10px 12px;box-shadow:0 1px 2px rgba(22,24,31,.06)"><span class="ms" style="font-size:15px;color:#9a9ea4">search</span><span style="font:500 11px 'Public Sans',sans-serif;color:#a8acb2">Search by item, place, date</span></div>
+<div style="display:flex;gap:6px;margin-top:10px">
+<span style="padding:6px 12px;border-radius:999px;background:#16181F;color:#fff;font:700 10px 'Public Sans',sans-serif">Found</span>
+<span style="padding:6px 12px;border-radius:999px;background:#fff;color:#6B7280;font:600 10px 'Public Sans',sans-serif;box-shadow:0 1px 2px rgba(22,24,31,.06)">Lost</span>
+<span style="padding:6px 12px;border-radius:999px;background:#fff;color:#6B7280;font:600 10px 'Public Sans',sans-serif;box-shadow:0 1px 2px rgba(22,24,31,.06)">Nearby</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:12px">
+<div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:16px;padding:11px;box-shadow:0 1px 2px rgba(22,24,31,.06)"><span style="flex:none;width:34px;height:34px;border-radius:12px;background:#EDF3F9;color:#0B6BCB;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:18px">account_balance_wallet</span></span><span style="flex:1;min-width:0;display:block"><span style="display:block;font:700 12px 'Public Sans',sans-serif;color:#16181F">Black Wallet</span><span style="display:block;margin-top:2px;font:400 10px 'Public Sans',sans-serif;color:#8b8f95">Riverside Park bench</span></span><span style="flex:none;font:700 9px 'Public Sans',sans-serif;color:#6B7280;background:#6B72801A;padding:4px 8px;border-radius:999px">Active</span></div>
+<div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:16px;padding:11px;box-shadow:0 1px 2px rgba(22,24,31,.06)"><span style="flex:none;width:34px;height:34px;border-radius:12px;background:#EDF3F9;color:#0B6BCB;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:18px">watch</span></span><span style="flex:1;min-width:0;display:block"><span style="display:block;font:700 12px 'Public Sans',sans-serif;color:#16181F">Silver Watch</span><span style="display:block;margin-top:2px;font:400 10px 'Public Sans',sans-serif;color:#8b8f95">Coffee shop on 5th Ave</span></span><span style="flex:none;font:700 9px 'Public Sans',sans-serif;color:#6B7280;background:#6B72801A;padding:4px 8px;border-radius:999px">Active</span></div>
+<div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:16px;padding:11px;box-shadow:0 1px 2px rgba(22,24,31,.06)"><span style="flex:none;width:34px;height:34px;border-radius:12px;background:#EDF3F9;color:#0B6BCB;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:18px">key</span></span><span style="flex:1;min-width:0;display:block"><span style="display:block;font:700 12px 'Public Sans',sans-serif;color:#16181F">Car Keys with Fob</span><span style="display:block;margin-top:2px;font:400 10px 'Public Sans',sans-serif;color:#8b8f95">Parking lot B</span></span><span style="flex:none;font:700 9px 'Public Sans',sans-serif;color:#0F7B3D;background:#0F7B3D1A;padding:4px 8px;border-radius:999px">Done</span></div>
+</div>
+</div>
+<div style="position:absolute;left:14px;right:14px;bottom:14px;height:56px;border-radius:22px;background:#fff;display:flex;align-items:center;justify-content:space-around;box-shadow:0 12px 26px -14px rgba(22,24,31,.5)"><span class="ms" style="font-size:20px;color:#a8acb2">space_dashboard</span><span class="ms" style="font-size:20px;color:#0B6BCB">travel_explore</span><span style="width:38px;height:38px;border-radius:14px;background:#0B6BCB;color:#fff;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:20px">add</span></span><span class="ms" style="font-size:20px;color:#a8acb2">forum</span><span class="ms" style="font-size:20px;color:#a8acb2">person</span></div>
+</div>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 px-4 bg-surface">
-        <div class="max-w-6xl mx-auto">
-            <h3 class="text-3xl font-bold mb-8 text-on-surface">About Lost Items Community</h3>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <p class="text-on-surface-variant text-lg mb-4">
-                        Lost Items Community is a platform dedicated to helping community members report, track, and recover lost items. We believe in the power of community and mutual support to solve everyday problems.
-                    </p>
-                    <p class="text-on-surface-variant text-lg mb-4">
-                        Whether you've lost something valuable or found an item that needs to be returned, our platform makes it easy to connect and help each other out.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-xl font-semibold mb-4 text-on-surface">Why Choose Us?</h4>
-                    <ul class="space-y-3 text-on-surface-variant">
-                        <li class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
-                            Community-driven approach
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
-                            Easy to use interface
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
-                            Real-time updates
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
-                            Mobile responsive
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<div style="flex:none;position:relative;z-index:3;width:296px;height:568px;border-radius:44px;background:#F2F2F0;overflow:hidden;box-shadow:0 60px 90px -40px rgba(22,24,31,.55),0 0 0 9px #16181F,0 0 0 10px rgba(255,255,255,.4)">
+<div style="height:38px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 24px 6px;font:600 11px 'Public Sans',sans-serif;color:#16181F"><span>9:41</span><span style="display:flex;gap:4px;align-items:center"><span style="width:13px;height:8px;border-radius:2px;background:currentColor"></span><span style="width:18px;height:9px;border-radius:3px;border:1.4px solid currentColor"></span></span></div>
+<div style="padding:4px 20px 18px;display:flex;flex-direction:column;height:calc(100% - 38px)">
+<div style="display:flex;align-items:center;justify-content:space-between">
+<div style="display:flex;align-items:center;gap:8px"><span style="width:26px;height:26px;border-radius:9px;background:#E2ECF7;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="public/images/logo.png" alt="" style="width:23px;height:23px;object-fit:contain"/></span><span style="font:700 12.5px 'Public Sans',sans-serif;color:#16181F">Lost Items Community</span></div>
+<span style="font:700 11.5px 'Public Sans',sans-serif;color:#8b8f95">Skip</span>
+</div>
+<div style="margin-top:12px;position:relative;width:100%;aspect-ratio:1;border-radius:30px;background:#E2ECF7;overflow:hidden">
+<img src="public/images/HomePage1.webp" alt="" style="position:absolute;left:8%;top:8%;width:84%;height:84%;object-fit:contain"/>
+</div>
+<div style="margin-top:14px">
+<div style="display:flex;gap:5px"><span style="width:20px;height:5px;border-radius:999px;background:#0B6BCB"></span><span style="width:5px;height:5px;border-radius:999px;background:#d4d6d2"></span><span style="width:5px;height:5px;border-radius:999px;background:#d4d6d2"></span></div>
+<div style="margin-top:12px;font:600 8.5px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#0B6BCB">Welcome to Lost Items Community</div>
+<div style="margin-top:8px;font:800 21px/1.14 'Public Sans',sans-serif;letter-spacing:-.035em;color:#16181F">Lost Something? We'll Help You Find It!</div>
+<div style="margin-top:8px;font:400 11.5px/1.5 'Public Sans',sans-serif;color:#6B7280">Report what you've found, search for what you've lost, and be part of a caring community.</div>
+</div>
+<div style="margin-top:auto;display:flex;gap:8px">
+<span style="flex:1;min-height:46px;border-radius:16px;background:#0B6BCB;color:#fff;font:700 13.5px 'Public Sans',sans-serif;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -12px rgba(11,107,203,.85)">Get started</span>
+</div>
+</div>
+</div>
 
-    <!-- CTA Section -->
-    <section class="py-16 px-4 bg-primary text-white">
-        <div class="max-w-6xl mx-auto text-center">
-            <h3 class="text-3xl font-bold mb-6">Ready to Get Started?</h3>
-            <p class="text-xl mb-8 opacity-90">
-                Join Lost Items Community today and help make your neighborhood safer and more connected.
-            </p>
-            <a href="https://github.com/ramanauday1561/LostItemsCommunity" 
-               class="inline-block bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-surface transition">
-                Explore the Platform
-            </a>
-        </div>
-    </section>
+<div style="flex:none;width:250px;height:478px;border-radius:38px;background:#F2F2F0;overflow:hidden;position:relative;margin-left:-30px;transform:rotate(9deg);box-shadow:0 40px 70px -34px rgba(22,24,31,.5),0 0 0 8px #16181F,0 0 0 9px rgba(255,255,255,.35)">
+<div style="height:32px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 20px 4px;font:600 10px 'Public Sans',sans-serif;color:#16181F"><span>9:41</span><span class="ms" style="font-size:13px">signal_cellular_alt</span></div>
+<div style="padding:8px 18px">
+<div style="font:600 8px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#9a9ea4">Secure chat</div>
+<div style="margin-top:3px;font:800 20px/1.1 'Public Sans',sans-serif;letter-spacing:-.03em;color:#16181F">cafe.5th</div>
+<div style="display:flex;align-items:center;gap:9px;margin-top:12px;background:#fff;border-radius:16px;padding:10px;box-shadow:0 1px 2px rgba(22,24,31,.06)"><span style="flex:none;width:30px;height:30px;border-radius:11px;background:#EDF3F9;color:#0B6BCB;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:16px">watch</span></span><span style="flex:1;min-width:0;display:block"><span style="display:block;font:700 11px 'Public Sans',sans-serif;color:#16181F">Silver Watch</span><span style="display:block;margin-top:2px;font:400 9.5px 'Public Sans',sans-serif;color:#8b8f95">Verify then meet</span></span></div>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
+<div style="align-self:flex-start;max-width:82%;background:#fff;border-radius:16px 16px 16px 5px;padding:10px 12px;font:400 10.5px/1.5 'Public Sans',sans-serif;color:#16181F;box-shadow:0 1px 2px rgba(22,24,31,.06)">Can you tell me what's engraved on the back?</div>
+<div style="align-self:flex-end;max-width:82%;background:#0B6BCB;color:#fff;border-radius:16px 16px 5px 16px;padding:10px 12px;font:400 10.5px/1.5 'Public Sans',sans-serif;box-shadow:0 12px 24px -16px rgba(11,107,203,.9)">"To J, 2019" — and there's a scratch on the clasp.</div>
+<div style="align-self:flex-start;max-width:82%;background:#fff;border-radius:16px 16px 16px 5px;padding:10px 12px;font:400 10.5px/1.5 'Public Sans',sans-serif;color:#16181F;box-shadow:0 1px 2px rgba(22,24,31,.06)">That matches. I'm at the café until 6 today.</div>
+</div>
+<div style="position:absolute;left:18px;right:18px;bottom:18px;display:flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:13px 16px;box-shadow:0 12px 26px -16px rgba(22,24,31,.5)"><span style="flex:1;font:500 10.5px 'Public Sans',sans-serif;color:#a8acb2">Message</span><span class="ms" style="font-size:16px;color:#0B6BCB">send</span></div>
+</div>
+</div>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-on-surface text-white py-12 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h5 class="font-semibold mb-4">Lost Items Community</h5>
-                    <p class="opacity-80">
-                        A platform for community members to report, track, and recover lost items together.
-                    </p>
-                </div>
-                <div>
-                    <h5 class="font-semibold mb-4">Quick Links</h5>
-                    <ul class="space-y-2 opacity-80">
-                        <li><a href="#features" class="hover:text-white transition">Features</a></li>
-                        <li><a href="#about" class="hover:text-white transition">About</a></li>
-                        <li><a href="https://github.com/ramanauday1561/LostItemsCommunity" class="hover:text-white transition">GitHub</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold mb-4">Get Involved</h5>
-                    <ul class="space-y-2 opacity-80">
-                        <li><a href="https://github.com/ramanauday1561/LostItemsCommunity/issues" class="hover:text-white transition">Report Issues</a></li>
-                        <li><a href="https://github.com/ramanauday1561/LostItemsCommunity" class="hover:text-white transition">Contribute</a></li>
-                        <li><a href="https://github.com/ramanauday1561" class="hover:text-white transition">Follow Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="border-white opacity-20 mb-6">
-            <div class="text-center opacity-80">
-                <p>&copy; 2024 Lost Items Community. All rights reserved. | Made with ❤️ by the community</p>
-            </div>
-        </div>
-    </footer>
+</div>
+</div>
+</div>
 
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+<div style="padding:clamp(20px,3vw,32px) clamp(16px,3vw,40px) 0;text-align:center">
+<div style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#8b8f95">Everything You Need in One Place</div>
+<div style="margin-top:18px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px">
+<span style="display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:14px;background:#F6F7F8;font:600 14px 'Public Sans',sans-serif;color:#16181F"><span class="ms" style="font-size:18px;color:#0B6BCB">add_a_photo</span>30-second reporting</span>
+<span style="display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:14px;background:#F6F7F8;font:600 14px 'Public Sans',sans-serif;color:#16181F"><span class="ms" style="font-size:18px;color:#0B6BCB">filter_alt</span>Smart filters</span>
+<span style="display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:14px;background:#F6F7F8;font:600 14px 'Public Sans',sans-serif;color:#16181F"><span class="ms" style="font-size:18px;color:#0B6BCB">notifications_active</span>Instant match alerts</span>
+<span style="display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:14px;background:#F6F7F8;font:600 14px 'Public Sans',sans-serif;color:#16181F"><span class="ms" style="font-size:18px;color:#0B6BCB">lock</span>Secure messaging</span>
+<span style="display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:14px;background:#F6F7F8;font:600 14px 'Public Sans',sans-serif;color:#16181F"><span class="ms" style="font-size:18px;color:#0B6BCB">shield</span>Verified users</span>
+</div>
+</div>
+
+<sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
+<div style="margin:clamp(28px,4vw,44px) clamp(16px,3vw,40px) 0;padding:clamp(20px,3vw,28px) clamp(20px,3vw,32px);border-radius:24px;background:#F6F7F8;display:grid;grid-template-columns:repeat(auto-fit,minmax(108px,1fr));gap:clamp(14px,2vw,24px)">
+<div style="padding-right:16px"><div style="font:800 clamp(28px,3.4vw,34px) 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F">10,000+</div><div style="margin-top:4px;font:500 13px 'Public Sans',sans-serif;color:#6B7280">Community members</div></div>
+<div style="padding-left:clamp(14px,2vw,24px);border-left:1px solid rgba(22,24,31,.07)"><div style="font:800 clamp(28px,3.4vw,34px) 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F">5,000+</div><div style="margin-top:4px;font:500 13px 'Public Sans',sans-serif;color:#6B7280">Happy reunions</div></div>
+<div style="padding-left:clamp(14px,2vw,24px);border-left:1px solid rgba(22,24,31,.07)"><div style="font:800 clamp(28px,3.4vw,34px) 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F">30 sec</div><div style="margin-top:4px;font:500 13px 'Public Sans',sans-serif;color:#6B7280">To report an item</div></div>
+<div style="padding-left:clamp(14px,2vw,24px);border-left:1px solid rgba(22,24,31,.07)"><div style="font:800 clamp(28px,3.4vw,34px) 'Public Sans',sans-serif;letter-spacing:-.04em;color:#0B6BCB">$0</div><div style="margin-top:4px;font:500 13px 'Public Sans',sans-serif;color:#6B7280">Free forever, no premium</div></div>
+</div>
+</sc-if>
+
+<div id="features" style="padding:clamp(48px,7vw,86px) clamp(16px,3vw,40px) 0">
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center">
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:clamp(18px,5vw,44px);height:1px;background:linear-gradient(90deg,rgba(11,107,203,0),#B9D6EF)"></span>
+<span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.28em;text-transform:uppercase;color:#0B6BCB">Features</span>
+<span style="width:clamp(18px,5vw,44px);height:1px;background:linear-gradient(270deg,rgba(11,107,203,0),#B9D6EF)"></span>
+</div>
+<h2 style="margin:14px 0 0;font:800 clamp(28px,4.4vw,44px)/1.1 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F;text-wrap:balance">Everything You Need in One Place</h2>
+<p style="margin:14px 0 0;max-width:700px;font:400 clamp(14.5px,1.5vw,16px)/1.7 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">From reporting found items to searching our extensive database, we've built the most comprehensive lost &amp; found platform. Join over 10,000+ users who trust us to help them find what matters most.</p>
+</div>
+<div style="margin-top:clamp(24px,3vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+<div style="padding:clamp(18px,2vw,26px);border-radius:24px;background:#F6F7F8;display:flex;flex-direction:column;gap:14px">
+<div style="aspect-ratio:4/3;border-radius:18px;background:#fff;display:flex;align-items:center;justify-content:center;padding:14px"><img src="public/images/feature-report-found.webp" alt="Report found items" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain"/></div>
+<div style="font:700 20px 'Public Sans',sans-serif;letter-spacing:-.02em;color:#16181F">Report Found Items</div>
+<div style="font:400 14.5px/1.65 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">Found something? Upload details in 30 seconds and help someone's day! Include photos, location, and description to maximize chances of reunion.</div>
+</div>
+<div style="padding:clamp(18px,2vw,26px);border-radius:24px;background:#F6F7F8;display:flex;flex-direction:column;gap:14px">
+<div style="aspect-ratio:4/3;border-radius:18px;background:#fff;display:flex;align-items:center;justify-content:center;padding:14px"><img src="public/images/feature-search-system.webp" alt="Smart search system" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain"/></div>
+<div style="font:700 20px 'Public Sans',sans-serif;letter-spacing:-.02em;color:#16181F">Smart Search System</div>
+<div style="font:400 14.5px/1.65 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">Use our intelligent search with filters by category, location, date, and color. Get instant notifications when matching items are reported!</div>
+</div>
+<div style="padding:clamp(18px,2vw,26px);border-radius:24px;background:#F6F7F8;display:flex;flex-direction:column;gap:14px">
+<div style="aspect-ratio:4/3;border-radius:18px;background:#fff;display:flex;align-items:center;justify-content:center;padding:14px"><img src="public/images/feature-success-stories.webp" alt="Success stories" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain"/></div>
+<div style="font:700 20px 'Public Sans',sans-serif;letter-spacing:-.02em;color:#16181F">Success Stories</div>
+<div style="font:400 14.5px/1.65 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">Over 5,000 happy reunions and counting! Read inspiring stories of wallets, pets, jewelry, and precious memories found through our community.</div>
+</div>
+</div>
+</div>
+
+<div id="how" style="padding:clamp(48px,7vw,86px) clamp(16px,3vw,40px) 0">
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center">
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:clamp(18px,5vw,44px);height:1px;background:linear-gradient(90deg,rgba(11,107,203,0),#B9D6EF)"></span>
+<span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.28em;text-transform:uppercase;color:#0B6BCB">How It Works</span>
+<span style="width:clamp(18px,5vw,44px);height:1px;background:linear-gradient(270deg,rgba(11,107,203,0),#B9D6EF)"></span>
+</div>
+<h2 style="margin:14px 0 0;font:800 clamp(28px,4.4vw,44px)/1.1 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F;text-wrap:balance">Simple, Fast &amp; Effective</h2>
+<p style="margin:14px 0 0;max-width:660px;font:400 clamp(14.5px,1.5vw,16px)/1.7 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">We've made finding lost items incredibly easy. Whether you've lost your wallet, keys, phone, jewelry, or any precious item, our community is here to help.</p>
+</div>
+
+<div style="margin-top:clamp(24px,3vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;align-items:stretch">
+<div style="padding:clamp(18px,2vw,26px);border-radius:24px;background:linear-gradient(180deg,#EDF3F9,#F7FAFC);display:flex;flex-direction:column">
+<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:200px;padding:8px 0 16px"><img src="public/images/hero-boy-with-dog.webp" alt="Report a found item" style="max-width:82%;max-height:220px;object-fit:contain"/></div>
+<div style="display:flex;align-items:center;gap:9px"><span style="width:22px;height:22px;border-radius:8px;background:#0B6BCB;color:#fff;font:700 11px 'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:center">1</span><span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#0B6BCB">REPORT</span></div>
+<div style="margin-top:10px;font:700 19px 'Public Sans',sans-serif;letter-spacing:-.02em;color:#16181F">Report Found Items</div>
+<div style="margin-top:6px;font:400 14px/1.6 'Public Sans',sans-serif;color:#6B7280">Photo, location, description — submitted in under two minutes from your phone.</div>
+</div>
+<div style="padding:clamp(18px,2vw,26px);border-radius:24px;background:linear-gradient(180deg,#F1F6EF,#FAFBF8);display:flex;flex-direction:column">
+<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:200px;padding:8px 0 16px">
+<div style="width:100%;max-width:250px;border-radius:22px;background:#fff;padding:14px;box-shadow:0 24px 50px -30px rgba(22,24,31,.5)">
+<div style="display:flex;align-items:center;gap:8px;background:#F6F7F8;border-radius:12px;padding:9px 11px"><span class="ms" style="font-size:16px;color:#9a9ea4">search</span><span style="font:500 11.5px 'Public Sans',sans-serif;color:#a8acb2">Blue backpack, Central Station</span></div>
+<div style="margin-top:10px;display:flex;align-items:center;gap:9px;padding:10px;border-radius:14px;background:#F6F7F8"><span style="flex:none;width:32px;height:32px;border-radius:11px;background:#fff;color:#0B6BCB;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:17px">backpack</span></span><span style="flex:1;min-width:0;display:block"><span style="display:block;font:700 12px 'Public Sans',sans-serif;color:#16181F">Blue Jansport backpack</span><span style="display:block;margin-top:2px;font:400 10.5px 'Public Sans',sans-serif;color:#8b8f95">Central Station platform 3</span></span><span class="ms" style="font-size:16px;color:#0F7B3D">check_circle</span></div>
+<div style="margin-top:8px;display:flex;align-items:center;gap:9px;padding:10px;border-radius:14px;background:#F6F7F8"><span style="flex:none;width:32px;height:32px;border-radius:11px;background:#fff;color:#0B6BCB;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:17px">visibility</span></span><span style="flex:1;min-width:0;display:block"><span style="display:block;font:700 12px 'Public Sans',sans-serif;color:#16181F">Prescription glasses</span><span style="display:block;margin-top:2px;font:400 10.5px 'Public Sans',sans-serif;color:#8b8f95">City library, 2nd floor</span></span></div>
+</div>
+</div>
+<div style="display:flex;align-items:center;gap:9px"><span style="width:22px;height:22px;border-radius:8px;background:#0B6BCB;color:#fff;font:700 11px 'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:center">2</span><span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#0B6BCB">SEARCH</span></div>
+<div style="margin-top:10px;font:700 19px 'Public Sans',sans-serif;letter-spacing:-.02em;color:#16181F">Search for Lost Belongings</div>
+<div style="margin-top:6px;font:400 14px/1.6 'Public Sans',sans-serif;color:#6B7280">Filter by category, location and date, and get an alert the moment a match is posted.</div>
+</div>
+<div style="padding:clamp(18px,2vw,26px);border-radius:24px;background:linear-gradient(180deg,#F7F1E9,#FCFAF7);display:flex;flex-direction:column">
+<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:200px;padding:8px 0 16px"><img src="public/images/illustration-exchange-item.webp" alt="Exchange the item" style="max-width:90%;max-height:220px;object-fit:contain"/></div>
+<div style="display:flex;align-items:center;gap:9px"><span style="width:22px;height:22px;border-radius:8px;background:#0B6BCB;color:#fff;font:700 11px 'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:center">3</span><span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#0B6BCB">REUNITE</span></div>
+<div style="margin-top:10px;font:700 19px 'Public Sans',sans-serif;letter-spacing:-.02em;color:#16181F">Verify, Then Meet Safely</div>
+<div style="margin-top:6px;font:400 14px/1.6 'Public Sans',sans-serif;color:#6B7280">Confirm ownership through secure messaging, then arrange a safe meetup in a public place.</div>
+</div>
+</div>
+</div>
+
+<div style="margin:clamp(48px,7vw,86px) clamp(16px,3vw,40px) 0;padding:clamp(24px,4vw,44px);border-radius:28px;background:#16181F;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,40px);align-items:center">
+<div>
+<h2 style="margin:0;font:800 clamp(26px,4vw,40px)/1.12 'Public Sans',sans-serif;letter-spacing:-.04em;color:#fff">Why Choose Us?</h2>
+<p style="margin:14px 0 0;font:400 15.5px/1.7 'Public Sans',sans-serif;color:rgba(255,255,255,.7);text-wrap:pretty">We're more than just a lost &amp; found platform - we're a community of caring people. Fast, secure, and completely free to use. Your next reunion is just a click away!</p>
+<div style="margin-top:26px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:13px;align-items:flex-start"><img src="public/images/100_306.svg" alt="" style="flex:none;width:22px;margin-top:3px"/><span style="font:400 14.5px/1.6 'Public Sans',sans-serif;color:rgba(255,255,255,.9)"><strong style="color:#fff">100% Free Forever</strong> - No hidden fees, no premium plans. Everyone deserves help finding what's lost.</span></div>
+<div style="display:flex;gap:13px;align-items:flex-start"><img src="public/images/100_311.svg" alt="" style="flex:none;width:22px;margin-top:3px"/><span style="font:400 14.5px/1.6 'Public Sans',sans-serif;color:rgba(255,255,255,.9)"><strong style="color:#fff">Instant Notifications</strong> - Get alerts when items matching your description are found.</span></div>
+<div style="display:flex;gap:13px;align-items:flex-start"><img src="public/images/100_316.svg" alt="" style="flex:none;width:22px;margin-top:3px"/><span style="font:400 14.5px/1.6 'Public Sans',sans-serif;color:rgba(255,255,255,.9)"><strong style="color:#fff">Trusted Community</strong> - Verified users, secure messaging, and safe meetup guidelines.</span></div>
+</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:center"><img src="public/images/illustration-exchange-item.webp" alt="People exchanging a lost item" style="width:100%;max-width:420px;height:auto"/></div>
+</div>
+
+<div id="guidelines" style="padding:clamp(48px,7vw,86px) clamp(16px,3vw,40px) 0">
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center">
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:clamp(18px,5vw,44px);height:1px;background:linear-gradient(90deg,rgba(11,107,203,0),#B9D6EF)"></span>
+<span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.28em;text-transform:uppercase;color:#0B6BCB">Community Guidelines</span>
+<span style="width:clamp(18px,5vw,44px);height:1px;background:linear-gradient(270deg,rgba(11,107,203,0),#B9D6EF)"></span>
+</div>
+<h2 style="margin:14px 0 0;font:800 clamp(28px,4.4vw,44px)/1.1 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F;text-wrap:balance">Four Rules That Keep Everyone Safe</h2>
+<p style="margin:14px 0 0;max-width:660px;font:400 clamp(14.5px,1.5vw,16px)/1.7 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">The same guidance the app shows before every handover. Moderators review reported posts and can suspend accounts that break these rules.</p>
+</div>
+<div style="margin-top:clamp(24px,3vw,36px);display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+<div style="padding:24px;border-radius:22px;background:#F6F7F8;display:flex;flex-direction:column;gap:12px">
+<span style="width:40px;height:40px;border-radius:14px;background:#fff;color:#0B6BCB;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:21px">fact_check</span></span>
+<div style="font:700 17px 'Public Sans',sans-serif;color:#16181F">Verify before you hand over</div>
+<div style="font:400 14px/1.65 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">Ask the claimant to describe unique features only the owner would know. Confirm in chat first, then arrange the handover.</div>
+</div>
+<div style="padding:24px;border-radius:22px;background:#F6F7F8;display:flex;flex-direction:column;gap:12px">
+<span style="width:40px;height:40px;border-radius:14px;background:#fff;color:#0B6BCB;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:21px">groups</span></span>
+<div style="font:700 17px 'Public Sans',sans-serif;color:#16181F">Meet in a busy public place</div>
+<div style="font:400 14px/1.65 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">Meet during daylight in a place with people around, and bring someone with you if you can. Never invite a stranger to your home.</div>
+</div>
+<div style="padding:24px;border-radius:22px;background:#F6F7F8;display:flex;flex-direction:column;gap:12px">
+<span style="width:40px;height:40px;border-radius:14px;background:#fff;color:#0B6BCB;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:21px">money_off</span></span>
+<div style="font:700 17px 'Public Sans',sans-serif;color:#16181F">Never send money upfront</div>
+<div style="font:400 14px/1.65 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">Lost Items Community is free and no one should ask you to pay for a returned item. Requests for payment or gift cards are a scam signal.</div>
+</div>
+<div style="padding:24px;border-radius:22px;background:#F6F7F8;display:flex;flex-direction:column;gap:12px">
+<span style="width:40px;height:40px;border-radius:14px;background:#fff;color:#0B6BCB;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:21px">flag</span></span>
+<div style="font:700 17px 'Public Sans',sans-serif;color:#16181F">Report anything suspicious</div>
+<div style="font:400 14px/1.65 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">Flag unverified claims, spam or suspicious contact details. A moderator reviews every flagged post and can remove it or suspend the member.</div>
+</div>
+</div>
+</div>
+
+<sc-if value="{{ showTestimonials }}" hint-placeholder-val="{{ true }}">
+<div id="stories" style="padding:clamp(48px,7vw,86px) clamp(16px,3vw,40px) 0">
+<div style="{{ storiesHead }}">
+<div style="{{ storiesLeft }}">
+<div style="{{ storiesEyebrow }}">
+<span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.28em;text-transform:uppercase;color:#0B6BCB">Stories</span>
+<span style="width:clamp(18px,5vw,44px);height:1px;background:linear-gradient(270deg,rgba(11,107,203,0),#B9D6EF)"></span>
+</div>
+<h2 style="margin:14px 0 0;font:800 clamp(28px,4.2vw,42px)/1.1 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F">Real Stories,<br>Real Results</h2>
+</div>
+<div style="display:flex;align-items:flex-start;gap:11px;max-width:400px;padding:16px 18px;border-radius:16px;background:#F6F7F8"><span class="ms" style="flex:none;font-size:19px;color:#0B6BCB;margin-top:1px">info</span><span style="font:400 14.5px/1.6 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">Don't just take our word for it - see how we've helped thousands reunite with their lost items</span></div>
+</div>
+<div style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+<div style="padding:clamp(18px,2vw,26px);border-radius:24px;background:#F6F7F8;display:flex;flex-direction:column;gap:14px">
+<div style="font:700 18px 'Public Sans',sans-serif;color:#16181F">Best Website for Lost Items</div>
+<div style="flex:1;font:400 14.5px/1.7 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">"I lost my wallet and thanks to Lost &amp; Found Hub, I was able to recover it within a day. Amazing Service by the website!"</div>
+<div style="display:flex;align-items:center;gap:12px"><img src="public/images/113_115.png" alt="John Doe" style="flex:none;width:44px;height:44px;border-radius:50%;object-fit:cover"/><span><span style="display:block;font:700 13.5px 'Public Sans',sans-serif;color:#16181F">John Doe</span><span style="display:block;font:400 12px 'Public Sans',sans-serif;color:#8b8f95">Marketing Manager, ABC Company</span></span></div>
+</div>
+<div style="padding:clamp(18px,2vw,26px);border-radius:24px;background:#F6F7F8;display:flex;flex-direction:column;gap:14px">
+<div style="font:700 18px 'Public Sans',sans-serif;color:#16181F">Helping Others</div>
+<div style="flex:1;font:400 14.5px/1.7 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">"I found a lost phone and was able to return it to its owner through Lost &amp; Found Hub. It feels great to help others."</div>
+<div style="display:flex;align-items:center;gap:12px"><img src="public/images/113_125.png" alt="Jane Smith" style="flex:none;width:44px;height:44px;border-radius:50%;object-fit:cover"/><span><span style="display:block;font:700 13.5px 'Public Sans',sans-serif;color:#16181F">Jane Smith</span><span style="display:block;font:400 12px 'Public Sans',sans-serif;color:#8b8f95">Software Engineer, YXZ Inc.</span></span></div>
+</div>
+<div style="padding:clamp(18px,2vw,26px);border-radius:24px;background:#F6F7F8;display:flex;flex-direction:column;gap:14px">
+<div style="font:700 18px 'Public Sans',sans-serif;color:#16181F">Get Lost Items Easily</div>
+<div style="flex:1;font:400 14.5px/1.7 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">"Lost &amp; Found Hub is a lifesaver! I lost my keys and someone found them and reported it on the website. I got them back in no time."</div>
+<div style="display:flex;align-items:center;gap:12px"><img src="public/images/113_135.png" alt="Sarah Johnson" style="flex:none;width:44px;height:44px;border-radius:50%;object-fit:cover"/><span><span style="display:block;font:700 13.5px 'Public Sans',sans-serif;color:#16181F">Sarah Johnson</span><span style="display:block;font:400 12px 'Public Sans',sans-serif;color:#8b8f95">HR Manager, XYZ Corp.</span></span></div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<div id="faq" style="padding:clamp(48px,7vw,86px) clamp(16px,3vw,40px) 0">
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center">
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:clamp(18px,5vw,44px);height:1px;background:linear-gradient(90deg,rgba(11,107,203,0),#B9D6EF)"></span>
+<span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.28em;text-transform:uppercase;color:#0B6BCB">FAQ</span>
+<span style="width:clamp(18px,5vw,44px);height:1px;background:linear-gradient(270deg,rgba(11,107,203,0),#B9D6EF)"></span>
+</div>
+<h2 style="margin:14px 0 0;font:800 clamp(28px,4.4vw,44px)/1.1 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F;text-wrap:balance">Got Questions? We've Got Answers!</h2>
+<p style="margin:14px 0 0;max-width:620px;font:400 clamp(14.5px,1.5vw,16px)/1.7 'Public Sans',sans-serif;color:#6B7280">Everything you need to know about finding lost items and helping others</p>
+</div>
+<div style="margin-top:clamp(24px,3vw,36px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,36px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:10px">
+<sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+<div style="{{ f.wrap }}">
+<button onClick="{{ f.toggle }}" style="width:100%;display:flex;align-items:center;gap:16px;padding:20px 22px 0;text-align:left">
+<span style="flex:1;font:700 clamp(15.5px,1.7vw,17px)/1.4 'Public Sans',sans-serif;color:#16181F">{{ f.q }}</span>
+<span class="ms" style="{{ f.chev }}">expand_more</span>
+</button>
+<div style="{{ f.body }}"><div style="min-height:0;overflow:hidden"><div style="padding:12px 22px 0;font:400 14.5px/1.7 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">{{ f.a }}</div></div></div>
+</div>
+</sc-for>
+</div>
+<div style="display:flex;align-items:center;justify-content:center"><img src="public/images/illustration-treasure-chest.webp" alt="Community treasure chest" style="width:100%;max-width:340px;height:auto;border-radius:20px"/></div>
+</div>
+</div>
+
+<div id="download" style="margin:clamp(48px,7vw,86px) clamp(16px,3vw,40px) 0;padding:clamp(24px,4vw,44px) clamp(20px,4vw,44px) 0;border-radius:28px;background:linear-gradient(160deg,#EAF3FA,#F7FAFC);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,3vw,32px);align-items:end;overflow:hidden">
+<div style="{{ dlText }}">
+<h2 style="margin:0;font:800 clamp(28px,4.2vw,42px)/1.1 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F">Take the Community Anywhere You Go</h2>
+<p style="{{ dlPara }}">Whether you've found something or lost something precious, take action now. Every second counts when it comes to reuniting people with their belongings. Download the app and join our growing community today!</p>
+<div style="{{ ctaRow }}">
+<button style="{{ btnAppStore }}" style-hover="transform:translateY(-2px)"><span class="ms" style="font-size:21px">phone_iphone</span><span style="text-align:left;line-height:1.1"><span style="display:block;font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;opacity:.7">DOWNLOAD ON THE</span><span style="display:block;font:700 15px 'Public Sans',sans-serif">App Store</span></span></button>
+<button style="{{ btnPlay }}" style-hover="transform:translateY(-2px)"><span class="ms" style="font-size:21px">play_arrow</span><span style="text-align:left;line-height:1.1"><span style="display:block;font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;opacity:.7">GET IT ON</span><span style="display:block;font:700 15px 'Public Sans',sans-serif">Google Play</span></span></button>
+</div>
+<div style="{{ ctaNote }}"><span class="ms" style="font-size:16px;color:#0F7B3D">check_circle</span>iOS 15+ and Android 9+</div>
+</div>
+<div style="justify-self:center;align-self:end;width:min(270px,100%);height:340px;border-radius:40px 40px 0 0;background:#F2F2F0;overflow:hidden;box-shadow:0 40px 70px -34px rgba(22,24,31,.5),0 0 0 9px #16181F">
+<div style="height:36px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 22px 5px;font:600 10.5px 'Public Sans',sans-serif;color:#16181F"><span>9:41</span><span class="ms" style="font-size:13px">signal_cellular_alt</span></div>
+<div style="padding:8px 18px">
+<div style="font:600 8.5px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#9a9ea4">Home</div>
+<div style="margin-top:3px;font:800 22px/1.1 'Public Sans',sans-serif;letter-spacing:-.03em;color:#16181F">Good morning</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px">
+<div style="padding:13px;border-radius:16px;background:#fff;box-shadow:0 1px 2px rgba(22,24,31,.06)"><div style="font:800 22px 'Public Sans',sans-serif;color:#16181F">4</div><div style="font:500 10px 'Public Sans',sans-serif;color:#8b8f95">Your posts</div></div>
+<div style="padding:13px;border-radius:16px;background:#fff;box-shadow:0 1px 2px rgba(22,24,31,.06)"><div style="font:800 22px 'Public Sans',sans-serif;color:#0F7B3D">2</div><div style="font:500 10px 'Public Sans',sans-serif;color:#8b8f95">Reunited</div></div>
+</div>
+<div style="margin-top:10px;padding:13px;border-radius:16px;background:#0B6BCB;color:#fff;display:flex;align-items:center;gap:10px;box-shadow:0 16px 30px -18px rgba(11,107,203,.9)"><span class="ms" style="font-size:19px">add_a_photo</span><span style="font:700 12.5px 'Public Sans',sans-serif">Report an item</span></div>
+<div style="margin-top:10px;display:flex;align-items:center;gap:9px;padding:11px;border-radius:16px;background:#fff;box-shadow:0 1px 2px rgba(22,24,31,.06)"><span style="flex:none;width:30px;height:30px;border-radius:11px;background:#EDF3F9;color:#0B6BCB;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:16px">smartphone</span></span><span style="flex:1;min-width:0;display:block"><span style="display:block;font:700 11.5px 'Public Sans',sans-serif;color:#16181F">iPhone 15</span><span style="display:block;margin-top:2px;font:400 10px 'Public Sans',sans-serif;color:#8b8f95">Union Square station</span></span></div>
+</div>
+</div>
+</div>
+
+<div style="margin-top:clamp(44px,6vw,76px);padding:clamp(28px,4vw,44px) clamp(16px,3vw,40px) 32px;border-top:1px solid #EDEEF0;display:flex;flex-wrap:wrap;gap:clamp(24px,3vw,36px)">
+<div style="flex:1 1 240px">
+<div style="display:flex;align-items:center;gap:10px"><span style="width:34px;height:34px;border-radius:11px;background:#EDF3F9;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="public/images/logo.png" alt="" style="width:30px;height:30px;object-fit:contain"/></span><span style="font:800 16px 'Public Sans',sans-serif;letter-spacing:-.03em;color:#16181F">Lost Items Community</span></div>
+<p style="margin:14px 0 0;max-width:280px;font:400 13.5px/1.7 'Public Sans',sans-serif;color:#6B7280">A community-driven lost &amp; found platform. Report what you've found, search for what you've lost — free, forever.</p>
+<div style="display:flex;gap:8px;margin-top:16px">
+<span style="width:34px;height:34px;border-radius:11px;background:#F4F5F6;color:#6B7280;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:17px">public</span></span>
+<span style="width:34px;height:34px;border-radius:11px;background:#F4F5F6;color:#6B7280;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:17px">mail</span></span>
+<span style="width:34px;height:34px;border-radius:11px;background:#F4F5F6;color:#6B7280;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:17px">forum</span></span>
+</div>
+</div>
+<div style="flex:1 1 260px;display:flex;gap:clamp(20px,3vw,36px)">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px">
+<div style="font:700 12px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#16181F">Pages</div>
+<a href="#features" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">Features</a>
+<a href="#how" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">How It Works</a>
+<a href="#stories" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">Stories</a>
+<a href="#faq" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">FAQ</a>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px">
+<div style="font:700 12px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#16181F">Utility</div>
+<a href="#download" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">Download app</a>
+<a href="#guidelines" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">Community guidelines</a>
+<a href="#faq" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">Privacy policy</a>
+<a href="#faq" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">Terms &amp; conditions</a>
+</div>
+</div>
+<div style="flex:1 1 340px;padding:24px;border-radius:20px;background:#F6F7F8">
+<div style="font:700 16px 'Public Sans',sans-serif;color:#16181F">Need More Help?</div>
+<div style="margin-top:8px;font:400 13.5px/1.6 'Public Sans',sans-serif;color:#6B7280">Our friendly support team is here 24/7. Get answers in minutes!</div>
+<div style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
+<input placeholder="you@example.com" style="width:100%;height:46px;padding:0 16px;border:0;border-radius:12px;background:#fff;font:500 14px 'Public Sans',sans-serif;color:#16181F"/>
+<button style="height:46px;padding:0 18px;border-radius:12px;background:#16181F;color:#fff;font:700 14px 'Public Sans',sans-serif" style-hover="transform:translateY(-1px)">Message Support</button>
+</div>
+</div>
+</div>
+
+<div style="padding:0 clamp(16px,3vw,40px) 30px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;font:400 12.5px 'Public Sans',sans-serif;color:#8b8f95">
+<span>© 2026 Lost Items Community. All rights reserved.</span>
+<span>Available on iOS and Android</span>
+</div>
+
+</div>
+</div>
+<div style="height:clamp(8px,2vw,26px)"></div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1300,&quot;height&quot;:1000},&quot;storePrimary&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;App Store&quot;,&quot;Google Play&quot;],&quot;default&quot;:&quot;App Store&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Landing&quot;},&quot;showStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Landing&quot;},&quot;showTestimonials&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Landing&quot;}}">
+const FAQ = [
+  {q:"How do I report an item?", a:"Super easy! Tap 'Report Found Item' in the app, upload a photo, add a description (color, brand, location found), and submit. You'll get notifications when potential owners reach out. The whole process takes less than 2 minutes!"},
+  {q:"How can I claim an item?", a:"Found your lost item? Open the item listing to view details and use our secure messaging system to contact the finder. Verify ownership by describing unique features only you would know. Arrange a safe meetup in a public place to collect your item!"},
+  {q:"What if I can't find my lost item?", a:"Don't give up! Create a lost item post with detailed descriptions, photos if available, and location. Enable notifications to get instant alerts when matching items are reported. Check back regularly and expand your search radius — new items are added daily!"},
+  {q:"Is the platform free?", a:"Absolutely! Lost Items Community is 100% free forever. No hidden fees, no premium plans, no catch. Create unlimited posts, search the entire database, and message other users completely free!"},
+  {q:"Is meeting a stranger safe?", a:"Always meet in a busy public place during daylight, bring someone with you if you can, and never send money upfront. Verify ownership in chat first — and report anything suspicious so a moderator can review it."},
+  {q:"How can I contact support?", a:"We're here to help 24/7! Use 'Message Support' for instant help, or reach us through the contact form in your account settings. Our friendly team typically responds within minutes."}
+];
+
+class Component extends DCLogic {
+  state = { open: 0, menuOpen: false, narrow: false, vw: 0 };
+  componentDidMount() {
+    this._fit = () => {
+      const n = window.innerWidth < 900;
+      const w = window.innerWidth;
+      if (n !== this.state.narrow) this.setState({ narrow: n, menuOpen: false, vw: w });
+      else if (w !== this.state.vw) this.setState({ vw: w });
+    };
+    this._fit();
+    window.addEventListener("resize", this._fit);
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this._fit); }
+  renderVals() {
+    const primary = this.props.storePrimary ?? "App Store";
+    const base = "display:flex;align-items:center;gap:11px;min-height:56px;padding:0 24px;border-radius:16px;";
+    const filled = base + "background:#16181F;color:#fff;box-shadow:0 18px 34px -18px rgba(22,24,31,.9)";
+    const ghost = base + "background:#E4EBF2;color:#16181F;box-shadow:inset 0 0 0 1px #D3DEE9";
+    const vw = this.state.vw || (typeof window !== "undefined" ? window.innerWidth : 1200);
+    const phoneScale = Math.max(.44, Math.min(1, (vw - 48) / 740));
+    const m = this.state.narrow;
+    return {
+      stageOuter: "position:relative;overflow:hidden;height:" + Math.round(568 * phoneScale + 24) + "px",
+      stageInner: "position:absolute;left:50%;top:12px;width:max-content;display:flex;align-items:center;justify-content:center;transform:translateX(-50%) scale(" + phoneScale.toFixed(3) + ");transform-origin:top center",
+      freeNote: "margin-top:16px;display:flex;align-items:flex-start;justify-content:center;gap:8px;max-width:420px",
+      freeNoteText: "font:500 13px/1.45 'Public Sans',sans-serif;color:#8b8f95;text-wrap:pretty;text-align:" + (m ? "center" : "left"),
+      ctaRow: "display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:26px;justify-content:" + (m ? "center" : "flex-start"),
+      ctaNote: "margin-top:18px;display:flex;align-items:center;gap:7px;font:500 13px 'Public Sans',sans-serif;color:#8b8f95;justify-content:" + (m ? "center" : "flex-start"),
+      dlText: "padding-bottom:clamp(28px,4vw,52px);text-align:" + (m ? "center" : "left"),
+      dlPara: "margin:16px " + (m ? "auto" : "0") + " 0;max-width:460px;font:400 15.5px/1.7 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty",
+      storiesHead: "display:flex;flex-wrap:wrap;gap:24px;align-items:" + (m ? "center" : "flex-end") + ";justify-content:" + (m ? "center" : "space-between") + ";flex-direction:" + (m ? "column" : "row"),
+      storiesLeft: m ? "text-align:center;display:flex;flex-direction:column;align-items:center" : "",
+      storiesEyebrow: "display:flex;align-items:center;gap:12px",
+      isDesktop: !this.state.narrow,
+      isMobile: this.state.narrow,
+      menuOpen: this.state.narrow && this.state.menuOpen,
+      menuGlyph: this.state.menuOpen ? "close" : "menu",
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      showStats: this.props.showStats ?? true,
+      showTestimonials: this.props.showTestimonials ?? true,
+      btnAppStore: primary === "Google Play" ? ghost : filled,
+      btnPlay: primary === "Google Play" ? filled : ghost,
+      faqs: FAQ.map((f, i) => {
+        const on = this.state.open === i;
+        return {
+          q: f.q, a: f.a,
+          toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i })),
+          wrap: "border-radius:20px;overflow:hidden;padding-bottom:20px;background:" + (on ? "#F6F7F8" : "#fff") + ";box-shadow:inset 0 0 0 1px " + (on ? "transparent" : "#EDEEF0"),
+          chev: "font-size:24px;color:" + (on ? "#0B6BCB" : "#9a9ea4") + ";transition:transform .2s ease;transform:rotate(" + (on ? 180 : 0) + "deg)",
+          body: "display:grid;grid-template-rows:" + (on ? "1fr" : "0fr") + ";transition:grid-template-rows .24s ease"
+        };
+      })
+    };
+  }
+}
+
+</script>
 </body>
 </html>
