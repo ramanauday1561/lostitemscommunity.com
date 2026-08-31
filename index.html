@@ -1,54 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <link rel="icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#0B6BCB" />
-    <!-- Resource hints for faster loading -->
+    <meta name="description" content="Lost Items Community - Find and report lost items in your community" />
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-    <!-- Preload critical images with fetchpriority -->
-    <link rel="preload" href="./images/Background2.webp" as="image" type="image/webp" fetchpriority="high" />
-    <link rel="preload" href="./images/HomePage1.webp" as="image" type="image/webp" fetchpriority="high" />
-    <!-- Preload fonts with font-display swap for better performance -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin />
-    <!-- AfterLogin typeface: IBM Plex Sans for UI, Plex Mono for record IDs and figures -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" />
-    <!-- Google Material Symbols Outlined Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" />
-    <!-- Tailwind CSS CDN -->
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: '#005dac',
-              surface: '#fcf8ff',
-              'surface-variant': '#e0e2ec',
-              'on-surface': '#191c20',
-              'on-surface-variant': '#43474e',
-              'lost-danger': '#D32F2F',
-              'found-success': '#2E7D32',
-              'pending-warning': '#ED6C02',
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#005dac',
+                        surface: '#fcf8ff',
+                        'surface-variant': '#e0e2ec',
+                        'on-surface': '#191c20',
+                        'on-surface-variant': '#43474e',
+                        'lost-danger': '#D32F2F',
+                        'found-success': '#2E7D32',
+                        'pending-warning': '#ED6C02',
+                    }
+                }
             }
-          }
         }
-      }
     </script>
-    <meta
-      name="description"
-      content="Lost Items Community - Find and report lost items in your community"
-    />
-    <link rel="apple-touch-icon" href="./logo192.png" />
-    <link rel="manifest" href="./manifest.json" />
+    
     <title>Lost Items Community</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+    <style>
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: #191c20;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #005dac 0%, #0B6BCB 100%);
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 93, 172, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-surface">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary" style="font-size: 32px;">search</span>
+                <h1 class="text-2xl font-bold text-primary">Lost Items Community</h1>
+            </div>
+            <div class="hidden md:flex gap-6">
+                <a href="#features" class="text-on-surface-variant hover:text-primary transition">Features</a>
+                <a href="#about" class="text-on-surface-variant hover:text-primary transition">About</a>
+                <a href="#contact" class="text-on-surface-variant hover:text-primary transition">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Find Lost Items in Your Community</h2>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">
+                Connect with your community to report, track, and recover lost items together
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://github.com/ramanauday1561/LostItemsCommunity" 
+                   class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-surface transition">
+                   View Project
+                </a>
+                <a href="#features" 
+                   class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition">
+                   Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-center mb-12 text-on-surface">Key Features</h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-surface rounded-lg p-6 border border-surface-variant">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-lost-danger" style="font-size: 32px;">report</span>
+                        <h4 class="text-xl font-semibold">Report Lost Items</h4>
+                    </div>
+                    <p class="text-on-surface-variant">
+                        Quickly document and share details about items you've lost. Upload photos, descriptions, and location information.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-surface rounded-lg p-6 border border-surface-variant">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-found-success" style="font-size: 32px;">check_circle</span>
+                        <h4 class="text-xl font-semibold">Post Found Items</h4>
+                    </div>
+                    <p class="text-on-surface-variant">
+                        Help reunite found items with their rightful owners. Report discoveries and connect with community members.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-surface rounded-lg p-6 border border-surface-variant">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary" style="font-size: 32px;">group</span>
+                        <h4 class="text-xl font-semibold">Community Support</h4>
+                    </div>
+                    <p class="text-on-surface-variant">
+                        Connect with community members to assist in recovery efforts and share information about lost items.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card bg-surface rounded-lg p-6 border border-surface-variant">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-pending-warning" style="font-size: 32px;">track_changes</span>
+                        <h4 class="text-xl font-semibold">Track Status</h4>
+                    </div>
+                    <p class="text-on-surface-variant">
+                        Keep track of lost and found items with real-time status updates. Mark items as recovered or pending.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card bg-surface rounded-lg p-6 border border-surface-variant">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary" style="font-size: 32px;">notifications</span>
+                        <h4 class="text-xl font-semibold">Smart Notifications</h4>
+                    </div>
+                    <p class="text-on-surface-variant">
+                        Get notified when items matching your lost items are found or when new items are reported.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card bg-surface rounded-lg p-6 border border-surface-variant">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary" style="font-size: 32px;">security</span>
+                        <h4 class="text-xl font-semibold">Safe & Secure</h4>
+                    </div>
+                    <p class="text-on-surface-variant">
+                        Your privacy and security are our priority. Share only what you're comfortable with in our safe community.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 bg-surface">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-on-surface">About Lost Items Community</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-on-surface-variant text-lg mb-4">
+                        Lost Items Community is a platform dedicated to helping community members report, track, and recover lost items. We believe in the power of community and mutual support to solve everyday problems.
+                    </p>
+                    <p class="text-on-surface-variant text-lg mb-4">
+                        Whether you've lost something valuable or found an item that needs to be returned, our platform makes it easy to connect and help each other out.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 text-on-surface">Why Choose Us?</h4>
+                    <ul class="space-y-3 text-on-surface-variant">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+                            Community-driven approach
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+                            Easy to use interface
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+                            Real-time updates
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+                            Mobile responsive
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-4 bg-primary text-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-6">Ready to Get Started?</h3>
+            <p class="text-xl mb-8 opacity-90">
+                Join Lost Items Community today and help make your neighborhood safer and more connected.
+            </p>
+            <a href="https://github.com/ramanauday1561/LostItemsCommunity" 
+               class="inline-block bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-surface transition">
+                Explore the Platform
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-on-surface text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h5 class="font-semibold mb-4">Lost Items Community</h5>
+                    <p class="opacity-80">
+                        A platform for community members to report, track, and recover lost items together.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Quick Links</h5>
+                    <ul class="space-y-2 opacity-80">
+                        <li><a href="#features" class="hover:text-white transition">Features</a></li>
+                        <li><a href="#about" class="hover:text-white transition">About</a></li>
+                        <li><a href="https://github.com/ramanauday1561/LostItemsCommunity" class="hover:text-white transition">GitHub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Get Involved</h5>
+                    <ul class="space-y-2 opacity-80">
+                        <li><a href="https://github.com/ramanauday1561/LostItemsCommunity/issues" class="hover:text-white transition">Report Issues</a></li>
+                        <li><a href="https://github.com/ramanauday1561/LostItemsCommunity" class="hover:text-white transition">Contribute</a></li>
+                        <li><a href="https://github.com/ramanauday1561" class="hover:text-white transition">Follow Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-white opacity-20 mb-6">
+            <div class="text-center opacity-80">
+                <p>&copy; 2024 Lost Items Community. All rights reserved. | Made with ❤️ by the community</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
