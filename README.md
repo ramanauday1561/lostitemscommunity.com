@@ -14,70 +14,86 @@ Lost Items Community is a platform that helps community members report, track, a
 - **Post Found Items** - Help reunite found items with their owners
 - **Community Engagement** - Connect with community members to assist in recovery
 - **Item Tracking** - Keep track of lost and found items status
-- **Rich UI** - Modern, responsive design using Tailwind CSS
-- **Performance Optimized** - Fast loading with preloaded critical resources
+- **Rich UI** - Modern, responsive design
+- **Performance Optimized** - All assets self-hosted, no third-party requests
 
 ## 🎨 Technology Stack
 
-- **Frontend Framework:** React (JavaScript)
-- **Styling:** Tailwind CSS (with custom design tokens)
-- **Fonts:** IBM Plex Sans, IBM Plex Mono, Google Material Symbols
-- **Performance:** Optimized with resource hints and preloading strategies
+- **Frontend:** React 18 (UMD build) driven by `public/js/support.js`, a
+  generated `dc-runtime` that renders the markup in `index.html`
+- **Styling:** Inline styles in the generated markup — no CSS framework
+- **Fonts:** Public Sans, IBM Plex Mono, Material Symbols Rounded — all
+  self-hosted as woff2 under `public/fonts/`
+- **No build tooling at runtime:** plain static files, no bundler, no CDN
 
 ### Design System
 
 **Color Palette:**
-- **Primary:** `#005dac` - Main brand color
-- **Surface:** `#fcf8ff` - Light background
-- **Lost Items:** `#D32F2F` - Danger/Red
-- **Found Items:** `#2E7D32` - Success/Green
-- **Pending Status:** `#ED6C02` - Warning/Orange
+- **Primary:** `#0B6BCB` - Main brand color
+- **Ink:** `#16181F` - Headings and dark surfaces
+- **Found / Success:** `#0F7B3D` - Green
+- **Surface:** `#F6F7F8` - Light background
+- **Muted text:** `#6B7280`
 
 ## 📱 Responsive Design
 
-The platform is fully responsive and optimized for:
-- Mobile devices (with viewport-fit=cover for notched displays)
+The layout adapts at runtime (the React runtime switches between desktop and
+mobile trees) and is checked at 375px and 1440px:
+- Mobile devices, including a slide-down nav menu
 - Tablets
 - Desktop browsers
 
-## ⚡ Performance Optimizations
+Installable to a phone home screen via `manifest.webmanifest` and an
+`apple-touch-icon`.
 
-- DNS prefetching for external font services
-- Resource preloading for critical images (WebP format)
-- Font preloading with `font-display: swap` for better performance
-- Content Security Policy and meta tags for security
+## ⚡ Performance Notes
 
-## 🔄 Deployment
-
-This repository is configured for hosting on GitHub Pages. The `index.html` file serves as the entry point for the static website.
-
-### Setting Up GitHub Pages
-
-1. Go to repository settings
-2. Enable GitHub Pages
-3. Select `main` branch as source
-4. Choose `/ (root)` as the publishing directory
+- Every asset is served from this origin — no Google Fonts, no unpkg, no CDN
+- `font-display: swap` on all faces
+- Images shipped as WebP where possible
 
 ## 📦 Project Structure
 
 ```
 .
-├── index.html          # Main HTML entry point
-├── README.md           # This file
-├── images/             # Static images
-│   ├── Background2.webp
-│   └── HomePage1.webp
-├── favicon.ico         # Website favicon
-├── logo192.png         # Apple touch icon
-└── manifest.json       # PWA manifest file
+├── Lost Items Community.html   # Source: self-extracting design bundle
+├── build.py                    # Unpacks the bundle -> index.html + public/
+├── index.html                  # GENERATED - do not edit by hand
+├── manifest.webmanifest        # PWA manifest
+├── favicon.ico
+├── CNAME
+└── public/
+    ├── fonts/                  # woff2 (Public Sans, IBM Plex Mono, Material Symbols)
+    ├── icons/                  # home-screen icons (180/192/512 + maskable)
+    ├── images/                 # webp / png / svg artwork
+    └── js/                     # react.js, react-dom.js, support.js
 ```
 
 ## 🛠️ Development
 
-If you're working with the original React source code, refer to the [LostItemsCommunity](https://github.com/ramanauday1561/LostItemsCommunity) repository.
+`index.html` and everything under `public/images`, `public/fonts` and
+`public/js` are **generated**. Edit the design upstream, re-export
+`Lost Items Community.html`, then regenerate:
 
-### Build Process
-The React application is built using `npm run build`, which generates the optimized static files that are then deployed via GitHub Pages.
+```bash
+python3 build.py
+```
+
+The script unpacks the bundle's asset manifest to disk, rewrites the template's
+uuid references to real paths, and prunes any file under `public/` that the new
+build no longer references. Hand edits to `index.html` are lost on the next run.
+
+Preview locally:
+
+```bash
+python3 -m http.server 4321
+```
+
+## 🔄 Deployment
+
+Hosted on GitHub Pages from the `main` branch, `/ (root)` publishing directory.
+`CNAME` points the site at lostitemscommunity.com. No build step runs on
+GitHub's side — the committed files are served as-is.
 
 ## 📝 License
 
