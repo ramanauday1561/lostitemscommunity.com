@@ -101,7 +101,7 @@ out = out.replace('<script src="/public/js/support.js"></script>',
                   react + '<script src="/public/js/support.js"></script>')
 
 HEAD = """<title>Lost Items Community</title>
-<meta name="description" content="Report found items, search the registry, and reunite people with their lost belongings.">
+<meta name="description" content="A free lost &amp; found board for your neighbourhood. Post what you lost or found, search nearby, and get your things back.">
 <meta name="theme-color" content="#16181F">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="192x192" href="/public/icons/icon-192.png">
