@@ -314,16 +314,16 @@
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
-</style><style>body{margin:0;background:linear-gradient(180deg,#bfe2f7 0%,#dcefFB 32%,#eef5fa 60%,#e9f2f9 100%);font-family:'Public Sans',system-ui,sans-serif;-webkit-text-size-adjust:100%}*{box-sizing:border-box}img{max-width:100%}a{color:#0B6BCB;text-decoration:none}a:hover{color:#08529c}button{font-family:inherit;cursor:pointer;border:0;background:none;padding:0;color:inherit;transition:transform .14s ease,background .18s ease,box-shadow .18s ease}input{font-family:inherit}input:focus{outline:none}.ms{font-family:'Material Symbols Rounded';font-weight:400;font-style:normal;line-height:1}</style></helmet>
+</style><style>body{margin:0;background:linear-gradient(180deg,#bfe2f7 0%,#dcefFB 32%,#eef5fa 60%,#e9f2f9 100%);font-family:'Public Sans',system-ui,sans-serif;-webkit-text-size-adjust:100%}*{box-sizing:border-box}img{max-width:100%}a{color:#0B6BCB;text-decoration:none}a:hover{color:#08529c}button{font-family:inherit;cursor:pointer;border:0;background:none;padding:0;color:inherit;transition:transform .14s ease,background .18s ease,box-shadow .18s ease}input{font-family:inherit}input:focus{outline:none}.ms{font-family:'Material Symbols Rounded';font-weight:400;font-style:normal;line-height:1}@media (max-width:899.98px){.free-note{display:block!important;text-align:center}.free-note>.ms{display:inline-block;vertical-align:-3px;margin:0 6px 0 0!important}.eyebrow-tail{display:none}}@media (max-width:600px){.hero-avatars{display:none!important}.stats{grid-template-columns:1fr 1fr!important;row-gap:18px!important;column-gap:0!important}.stats>div{padding:0 0 0 16px!important;border-left:1px solid rgba(22,24,31,.07)!important}.stats>div:nth-child(odd){padding:0 16px 0 0!important;border-left:0!important}.faq-art{max-width:200px!important}.foot-col{gap:0!important}.foot-col>div{margin-bottom:4px}.foot-col>a{padding:8px 0}}@media (max-width:400px){.nav-brand{flex:1 1 0;min-width:0}.nav-brand-name{font-size:15px!important;line-height:1.15}}</style></helmet>
 
 <div style="width:100%;min-height:100vh;padding:clamp(8px,2vw,26px) clamp(8px,2vw,26px) 0;display:flex;justify-content:center">
 <div style="width:100%;max-width:1560px;background:#fff;border-radius:clamp(18px,2vw,26px);overflow:hidden;box-shadow:0 40px 90px -50px rgba(16,42,66,.45)">
 
 <div style="position:sticky;top:0;z-index:20;padding:clamp(10px,2vw,18px) clamp(12px,2.4vw,28px) 10px;background:linear-gradient(180deg,#fff 70%,rgba(255,255,255,0))">
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(10px,2vw,28px);padding:10px 12px 10px clamp(14px,2vw,22px);border-radius:clamp(20px,4vw,999px);background:#fff;box-shadow:0 0 0 1px rgba(22,24,31,.05),0 2px 8px rgba(22,24,31,.08),0 10px 30px rgba(22,24,31,.13),0 18px 40px -28px rgba(22,24,31,.5)">
-<div style="display:flex;align-items:center;gap:10px;margin-right:auto;order:1">
+<div class="nav-brand" style="display:flex;align-items:center;gap:10px;margin-right:auto;order:1">
 <span style="width:38px;height:38px;border-radius:12px;background:#EDF3F9;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="/public/images/logo.png" alt="Lost Items Community" style="width:34px;height:34px;object-fit:contain"></span>
-<span style="font:800 clamp(16px,1.6vw,19px) 'Public Sans',sans-serif;letter-spacing:-.03em;color:#16181F">Lost Items Community</span>
+<span class="nav-brand-name" style="font:800 clamp(16px,1.6vw,19px) 'Public Sans',sans-serif;letter-spacing:-.03em;color:#16181F">Lost Items Community</span>
 </div>
 <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
 <div style="flex:1 1 240px;order:2;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(10px,1.6vw,24px)">
@@ -358,7 +358,7 @@
 
 <div style="padding:22px clamp(16px,3vw,40px) 0;display:flex;flex-direction:column;align-items:center;text-align:center">
 <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;padding:6px 6px 6px 14px;border-radius:999px;background:#F4F5F6">
-<div style="display:flex">
+<div class="hero-avatars" style="display:flex">
 <span style="width:26px;height:26px;border-radius:50%;background:#0B6BCB;color:#fff;font:700 9px 'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:center;border:2px solid #fff">JO</span>
 <span style="width:26px;height:26px;border-radius:50%;background:#0F7B3D;color:#fff;font:700 9px 'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:center;border:2px solid #fff;margin-left:-8px">MA</span>
 <span style="width:26px;height:26px;border-radius:50%;background:#16181F;color:#fff;font:700 9px 'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:center;border:2px solid #fff;margin-left:-8px">EL</span>
@@ -374,7 +374,7 @@
 <button class="store-btn" style="{{ btnAppStore }}" style-hover="transform:translateY(-2px)"><span class="ms" style="font-size:21px">phone_iphone</span><span style="text-align:left;line-height:1.1"><span style="display:block;font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;opacity:.7">COMING SOON TO</span><span style="display:block;font:700 15px 'Public Sans',sans-serif">App Store</span></span></button>
 <button class="store-btn" style="{{ btnPlay }}" style-hover="transform:translateY(-2px)"><span class="ms" style="font-size:26px">play_arrow</span><span style="text-align:left;line-height:1.1"><span style="display:block;font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;opacity:.7">COMING SOON TO</span><span style="display:block;font:700 15px 'Public Sans',sans-serif">Google Play</span></span></button>
 </div>
-<div style="{{ freeNote }}" data-comment-anchor="f58e291335-div"><span class="ms" style="flex:none;font-size:17px;color:#0F7B3D;margin-top:1px">check_circle</span><span style="{{ freeNoteText }}">Free to use. The app is open now in your browser at <a href="https://app.lostitemscommunity.com" style="color:#0B6BCB;font-weight:700">app.lostitemscommunity.com</a></span></div>
+<div class="free-note" style="{{ freeNote }}" data-comment-anchor="f58e291335-div"><span class="ms" style="flex:none;font-size:17px;color:#0F7B3D;margin-top:1px">check_circle</span><span style="{{ freeNoteText }}">Free to use. The app is open now in your browser at <a href="https://app.lostitemscommunity.com" style="color:#0B6BCB;font-weight:700">app.lostitemscommunity.com</a></span></div>
 </div>
 
 <div style="position:relative;margin-top:clamp(24px,4vw,44px);overflow:hidden">
@@ -455,7 +455,7 @@
 </div>
 
 <sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
-<div style="margin:clamp(28px,4vw,44px) clamp(16px,3vw,40px) 0;padding:clamp(20px,3vw,28px) clamp(20px,3vw,32px);border-radius:24px;background:#F6F7F8;display:grid;grid-template-columns:repeat(auto-fit,minmax(108px,1fr));gap:clamp(14px,2vw,24px)">
+<div class="stats" style="margin:clamp(28px,4vw,44px) clamp(16px,3vw,40px) 0;padding:clamp(20px,3vw,28px) clamp(20px,3vw,32px);border-radius:24px;background:#F6F7F8;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(108px,100%),1fr));gap:clamp(14px,2vw,24px)">
 <div style="padding-right:16px"><div style="font:800 clamp(28px,3.4vw,34px) 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F">Lost</div><div style="margin-top:4px;font:500 13px 'Public Sans',sans-serif;color:#6B7280">Post what you're missing</div></div>
 <div style="padding-left:clamp(14px,2vw,24px);border-left:1px solid rgba(22,24,31,.07)"><div style="font:800 clamp(28px,3.4vw,34px) 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F">Found</div><div style="margin-top:4px;font:500 13px 'Public Sans',sans-serif;color:#6B7280">Hand in what you picked up</div></div>
 <div style="padding-left:clamp(14px,2vw,24px);border-left:1px solid rgba(22,24,31,.07)"><div style="font:800 clamp(28px,3.4vw,34px) 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F">Nearby</div><div style="margin-top:4px;font:500 13px 'Public Sans',sans-serif;color:#6B7280">See posts around you</div></div>
@@ -473,7 +473,7 @@
 <h2 style="margin:14px 0 0;font:800 clamp(28px,4.4vw,44px)/1.1 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F;text-wrap:balance">What You Can Do</h2>
 <p style="margin:14px 0 0;max-width:700px;font:400 clamp(14.5px,1.5vw,16px)/1.7 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">Lost Items Community is a lost &amp; found board for the people around you. Posting, searching, chatting and meeting up all happen in one app.</p>
 </div>
-<div style="margin-top:clamp(24px,3vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+<div style="margin-top:clamp(24px,3vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:20px">
 <div style="padding:clamp(18px,2vw,26px);border-radius:24px;background:#F6F7F8;display:flex;flex-direction:column;gap:14px">
 <div style="aspect-ratio:4/3;border-radius:18px;background:#fff;display:flex;align-items:center;justify-content:center;padding:14px"><img src="/public/images/feature-report-found.webp" alt="Report found items" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain"></div>
 <div style="font:700 20px 'Public Sans',sans-serif;letter-spacing:-.02em;color:#16181F">Post What You Lost or Found</div>
@@ -503,7 +503,7 @@
 <p style="margin:14px 0 0;max-width:660px;font:400 clamp(14.5px,1.5vw,16px)/1.7 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">Keys, a wallet, a phone or the dog's favourite toy, it works the same way.</p>
 </div>
 
-<div style="margin-top:clamp(24px,3vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;align-items:stretch">
+<div style="margin-top:clamp(24px,3vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px;align-items:stretch">
 <div style="padding:clamp(18px,2vw,26px);border-radius:24px;background:linear-gradient(180deg,#EDF3F9,#F7FAFC);display:flex;flex-direction:column">
 <div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:200px;padding:8px 0 16px"><img src="/public/images/hero-boy-with-dog.webp" alt="Report a found item" style="max-width:82%;max-height:220px;object-fit:contain"></div>
 <div style="display:flex;align-items:center;gap:9px"><span style="width:22px;height:22px;border-radius:8px;background:#0B6BCB;color:#fff;font:700 11px 'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:center">1</span><span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#0B6BCB">POST</span></div>
@@ -531,7 +531,7 @@
 </div>
 </div>
 
-<div style="margin:clamp(48px,7vw,86px) clamp(16px,3vw,40px) 0;padding:clamp(24px,4vw,44px);border-radius:28px;background:#16181F;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,40px);align-items:center">
+<div style="margin:clamp(48px,7vw,86px) clamp(16px,3vw,40px) 0;padding:clamp(24px,4vw,44px);border-radius:28px;background:#16181F;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(24px,3vw,40px);align-items:center">
 <div>
 <h2 style="margin:0;font:800 clamp(26px,4vw,40px)/1.12 'Public Sans',sans-serif;letter-spacing:-.04em;color:#fff">Why People Use It</h2>
 <p style="margin:14px 0 0;font:400 15.5px/1.7 'Public Sans',sans-serif;color:rgba(255,255,255,.7);text-wrap:pretty">It's built for neighbours helping neighbours. It's free, moderators check reported posts, and the safety rules are part of every handover.</p>
@@ -554,7 +554,7 @@
 <h2 style="margin:14px 0 0;font:800 clamp(28px,4.4vw,44px)/1.1 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F;text-wrap:balance">Four Rules That Keep Everyone Safe</h2>
 <p style="margin:14px 0 0;max-width:660px;font:400 clamp(14.5px,1.5vw,16px)/1.7 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">The app asks you to accept these before you arrange a handover. Moderators review reported posts and can suspend accounts that break them.</p>
 </div>
-<div style="margin-top:clamp(24px,3vw,36px);display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+<div style="margin-top:clamp(24px,3vw,36px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:16px">
 <div style="padding:24px;border-radius:22px;background:#F6F7F8;display:flex;flex-direction:column;gap:12px">
 <span style="width:40px;height:40px;border-radius:14px;background:#fff;color:#0B6BCB;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:21px">fact_check</span></span>
 <div style="font:700 17px 'Public Sans',sans-serif;color:#16181F">Verify before you hand over</div>
@@ -584,13 +584,13 @@
 <div style="{{ storiesLeft }}">
 <div style="{{ storiesEyebrow }}">
 <span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.28em;text-transform:uppercase;color:#0B6BCB">Forum</span>
-<span style="width:clamp(18px,5vw,44px);height:1px;background:linear-gradient(270deg,rgba(11,107,203,0),#B9D6EF)"></span>
+<span class="eyebrow-tail" style="width:clamp(18px,5vw,44px);height:1px;background:linear-gradient(270deg,rgba(11,107,203,0),#B9D6EF)"></span>
 </div>
 <h2 style="margin:14px 0 0;font:800 clamp(28px,4.2vw,42px)/1.1 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F">Talk It Through<br>in the Forum</h2>
 </div>
 <div style="display:flex;align-items:flex-start;gap:11px;max-width:400px;padding:16px 18px;border-radius:16px;background:#F6F7F8"><span class="ms" style="flex:none;font-size:19px;color:#0B6BCB;margin-top:1px">info</span><span style="font:400 14.5px/1.6 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">The forum is where people share sightings, ask questions and post when something made it home. Mark replies as helpful so the best answers rise to the top.</span></div>
 </div>
-<div style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+<div style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:20px">
 <div style="padding:clamp(18px,2vw,26px);border-radius:24px;background:#F6F7F8;display:flex;flex-direction:column;gap:14px">
 <div style="font:700 18px 'Public Sans',sans-serif;color:#16181F">Seen Something?</div>
 <div style="flex:1;font:400 14.5px/1.7 'Public Sans',sans-serif;color:#6B7280;text-wrap:pretty">Spotted a dog on its own, or a bag left on the bus? Post where and when you saw it, so the owner knows where to look.</div>
@@ -620,7 +620,7 @@
 <h2 style="margin:14px 0 0;font:800 clamp(28px,4.4vw,44px)/1.1 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F;text-wrap:balance">Common Questions</h2>
 <p style="margin:14px 0 0;max-width:620px;font:400 clamp(14.5px,1.5vw,16px)/1.7 'Public Sans',sans-serif;color:#6B7280">Short answers to what people ask most.</p>
 </div>
-<div style="margin-top:clamp(24px,3vw,36px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,36px);align-items:center">
+<div style="margin-top:clamp(24px,3vw,36px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(24px,3vw,36px);align-items:center">
 <div style="display:flex;flex-direction:column;gap:10px">
 <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
 <div style="{{ f.wrap }}">
@@ -632,11 +632,11 @@
 </div>
 </sc-for>
 </div>
-<div style="display:flex;align-items:center;justify-content:center"><img src="/public/images/illustration-treasure-chest.webp" alt="Community treasure chest" style="width:100%;max-width:340px;height:auto;border-radius:20px"></div>
+<div style="display:flex;align-items:center;justify-content:center"><img src="/public/images/illustration-treasure-chest.webp" alt="Community treasure chest" class="faq-art" style="width:100%;max-width:340px;height:auto;border-radius:20px"></div>
 </div>
 </div>
 
-<div id="download" style="margin:clamp(48px,7vw,86px) clamp(16px,3vw,40px) 0;padding:clamp(24px,4vw,44px) clamp(20px,4vw,44px) 0;border-radius:28px;background:linear-gradient(160deg,#EAF3FA,#F7FAFC);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,3vw,32px);align-items:end;overflow:hidden">
+<div id="download" style="margin:clamp(48px,7vw,86px) clamp(16px,3vw,40px) 0;padding:clamp(24px,4vw,44px) clamp(20px,4vw,44px) 0;border-radius:28px;background:linear-gradient(160deg,#EAF3FA,#F7FAFC);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:clamp(20px,3vw,32px);align-items:end;overflow:hidden">
 <div style="{{ dlText }}">
 <h2 style="margin:0;font:800 clamp(28px,4.2vw,42px)/1.1 'Public Sans',sans-serif;letter-spacing:-.04em;color:#16181F">Use It in Your Browser Today</h2>
 <p style="{{ dlPara }}">The iPhone and Android apps are on the way. Until then, the full app runs in your phone's browser, and you can add it to your home screen so it opens like any other app.</p>
@@ -672,14 +672,14 @@
 </div>
 </div>
 <div style="flex:1 1 260px;display:flex;gap:clamp(20px,3vw,36px)">
-<div style="flex:1;display:flex;flex-direction:column;gap:10px">
+<div class="foot-col" style="flex:1;display:flex;flex-direction:column;gap:10px">
 <div style="font:700 12px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#16181F">Pages</div>
 <a href="#features" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">Features</a>
 <a href="#how" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">How It Works</a>
 <a href="#forum" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">Forum</a>
 <a href="#faq" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">FAQ</a>
 </div>
-<div style="flex:1;display:flex;flex-direction:column;gap:10px">
+<div class="foot-col" style="flex:1;display:flex;flex-direction:column;gap:10px">
 <div style="font:700 12px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#16181F">Utility</div>
 <a href="https://app.lostitemscommunity.com" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">Open the web app</a>
 <a href="#guidelines" style="font:400 13.5px 'Public Sans',sans-serif;color:#6B7280">Community guidelines</a>
