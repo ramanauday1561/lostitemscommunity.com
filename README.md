@@ -59,10 +59,13 @@ Installable to a phone home screen via `manifest.webmanifest` and an
 ├── Lost Items Community.html   # Source: self-extracting design bundle
 ├── build.py                    # Unpacks the bundle -> index.html + public/
 ├── index.html                  # GENERATED - do not edit by hand
+├── privacy.html                # Privacy policy (hand-written, not generated)
+├── terms.html                  # Terms & conditions (hand-written, not generated)
 ├── manifest.webmanifest        # PWA manifest
 ├── favicon.ico
 ├── CNAME
 └── public/
+    ├── css/                    # legal.css, shared by privacy.html and terms.html
     ├── fonts/                  # woff2 (Public Sans, IBM Plex Mono, Material Symbols)
     ├── icons/                  # home-screen icons (180/192/512 + maskable)
     ├── images/                 # webp / png / svg artwork
